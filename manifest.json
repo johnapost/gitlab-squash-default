@@ -1,0 +1,11 @@
+{
+  "manifest_version": 2,
+  "name": "GitLab Squash Default",
+  "version": "0.1",
+  "content_scripts": [
+    {
+      "matches": ["https://gitlab.com/*/merge_requests/*"],
+      "js": ["content.js"]
+    }
+  ]
+}
