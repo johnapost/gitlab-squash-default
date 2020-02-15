@@ -1,6 +1,6 @@
 # gitlab-squash-default
 
-Squash GitLab commits.. by default
+Squash GitLab commits and delete source branch.. by default.
 
 ## Installation instructions:
 1. Clone the repository to your machine.
