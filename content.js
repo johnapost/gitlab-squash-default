@@ -25,7 +25,26 @@ const check = (inputs, interval) => {
   })
 }
 
-window.addEventListener('load', () => {
-  const checkSquash = setInterval(() => check(squashInputs, checkSquash), 250);
-  const checkSource = setInterval(() => check(sourceInputs, checkSource), 250);
+window.addEventListener("load", () => {
+  chrome.storage.sync.get({
+    squashOption: "enabled",
+    sourceOption: "enabled"
+  }, (items) => {
+    const squashOption = items.squashOption;
+    const sourceOption = items.sourceOption;
+
+    if (squashOption === "enabled") {
+      const checkSquash = setInterval(
+        () => check(squashInputs, checkSquash),
+        250
+      );
+    }
+  
+    if (sourceOption === "enabled") {
+      const checkSource = setInterval(
+        () => check(sourceInputs, checkSource),
+        250
+      );
+    }
+  })
 });
